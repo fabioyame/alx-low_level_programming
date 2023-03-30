@@ -5,6 +5,7 @@
  *
  */
 void print_number(int n)
+
 {
 unsigned int abs;
 int mult = 1;
