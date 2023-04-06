@@ -2,7 +2,7 @@
 /**
  * _print_rev_recursion - the functionn prints in reverse recurse
  * @s: The string to recurse
- (
+ *
  */
 
 void _print_rev_recursion(char *s)
