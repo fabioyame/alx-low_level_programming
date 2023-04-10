@@ -1,58 +1,56 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <ctype.h>
-#define UNUSED(x) (void)(x)
 
 /**
- * StringCheck - Function to check string
- * @s: string to be check
+ * check_num - Function checks string
+ * @str: The String to check
  * Return: boolean
  */
-int StringCheck(char *s)
+int check_num(char *str)
 {
-int i = 0;
-
-for (; s[i] != '\0'; i++)
+unsigned int count;
+count = 0;
+while (count < strlen(str))
 {
-if (!isdigit(s[i]))
+if (!isdigit(str[count]))
 {
 return (0);
 }
+count++;
 }
 return (1);
 }
+
 /**
- * main - The main function
+ * main - The main function that adds positive numbers.
  * @argc: Argument count
  * @argv: Vector of arguments
- *Return: Always 0
+ * Return: Always 0
  */
-int main(int argc, char  *argv[])
-{
-int i;
-int result = 0;
 
-if (argc > 1)
+int main(int argc, char *argv[])
 {
-for (i = 1; i < argc; i++)
+int count;
+int str_to_int;
+int sum = 0;
+count = 1;
+while (count < argc)
 {
-if (StringCheck(argv[i]))
+if (check_num(argv[count]))
 {
-result += atoi(argv[i]);
+str_to_int = atoi(argv[count]);
+sum += str_to_int;
 }
 else
 {
 printf("Error\n");
 return (1);
 }
+count++;
 }
-printf("%d\n", result);
+printf("%d\n", sum);
 return (0);
-}
-else
-{
-printf("%d\n", 0);
-return (1);
-}
 }
