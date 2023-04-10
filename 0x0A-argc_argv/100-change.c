@@ -9,11 +9,11 @@
  * @argv: Vector of arguments
  * Return: Always 0
  */
+
 int main(int argc, char  *argv[])
 {
-	int c = 0;
-	int mon;
-
+	int coins = 0;
+int money;
 	if (argc == 2)
 	{
 		if (strchr(argv[argc - 1], '-'))
@@ -21,29 +21,29 @@ int main(int argc, char  *argv[])
 			printf("0\n");
 			return (1);
 		}
-	mon = atoi(argv[argc - 1]);
+				money = atoi(argv[argc - 1]);
 
-		while (mon > 0)
+		while (money > 0)
 		{
-			if (mon % 25 == 0)
+			if (money % 25 == 0)
 			{
-				mon -= 25;
-			} else if (mon % 10 == 0)
+				money -= 25;
+			} else if (money % 10 == 0)
 			{
-				mon -= 10;
-			} else if (mon % 5 == 0)
+				money -= 10;
+			} else if (money % 5 == 0)
 			{
-				mon -= 5;
-			} else if (mon % 2 == 0)
+				money -= 5;
+			} else if (money % 2 == 0)
 			{
-				mon -= 2;
+				money -= 2;
 			} else
 			{
-				mon--;
+				money--;
 			}
-			c++;
+			coins++;
 		}
-		printf("%d\n", c);
+		printf("%d\n", coins);
 		return (0);
 	}
 	printf("Error\n");
