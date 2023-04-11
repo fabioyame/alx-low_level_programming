@@ -24,7 +24,7 @@ char *_strdup(char *str)
 	if (t == NULL)
 		return (NULL);
 
-	for (j = 0; i < k; j++)
+	for (j = 0; j < k; j++)
 		t[j] = str[j];
 
 	return (t);
